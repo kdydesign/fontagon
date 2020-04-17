@@ -11,8 +11,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix lib",
+    "serve": "vue-cli-service serve",
     "test": "yarn lint && jest",
+    "test:jest": "babel-node test/fixture/index.js",
+    "lint": "eslint --fix lib",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [
@@ -35,17 +37,23 @@
     "lodash": "^4.17.15",
     "mkdirp": "^1.0.4",
     "q": "^1.5.1",
+    "rimraf": "^3.0.2",
     "svg2ttf": "^4.3.0",
     "svgicons2svgfont": "^9.1.1",
     "ttf2eot": "^2.0.0",
     "ttf2woff": "^2.0.1",
-    "ttf2woff2": "^3.0.0"
+    "ttf2woff2": "^3.0.0",
+    "url-join": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.3.0",
     "codecov": "^3.6.5",
@@ -56,8 +64,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
-    "standard-version": "^7.1.0"
+    "standard-version": "^7.1.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }

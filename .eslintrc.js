@@ -16,11 +16,13 @@ module.exports = {
   extends: [
     'standard',
     'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
+    "plugin:vue/essential",
+    "eslint:recommended"
   ],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.mjs'] }
+      node: { extensions: ['.js', '.mjs' ,'json', 'vue'] }
     }
   },
   rules: {
@@ -29,7 +31,7 @@ module.exports = {
     /**********************/
 
     // Enforce import order
-    'import/order': 'error',
+    'import/order': 'off',
 
     // Imports should come first
     'import/first': 'error',
