@@ -1,0 +1,53 @@
+{
+  "name": "fontagon",
+  "version": "1.0.0",
+  "description": "Easy web icon font generator",
+  "homepage": "https://github.com/kdydesign/fontagon",
+  "repository": "https://github.com/kdydesign/fontagon",
+  "bugs": {
+    "url": "https://github.com/kdydesign/fontagon/issues",
+    "email": "kdydesign@gmail.com"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn lint && jest",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+  },
+  "keywords": [
+    "font",
+    "webfont",
+    "svg",
+    "ttf",
+    "woff",
+    "woff2",
+    "icon-font",
+    "icon"
+  ],
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Dev.DY <kdydesign@gmail.com>"
+    }
+  ],
+  "dependencies": {
+    "svg2ttf": "^4.3.0",
+    "svgicons2svgfont": "^9.1.1",
+    "ttf2eot": "^2.0.0",
+    "ttf2woff": "^2.0.1",
+    "ttf2woff2": "^3.0.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.6.5",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "standard-version": "^7.1.0"
+  }
+}
