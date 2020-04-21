@@ -1,20 +1,22 @@
-const fontagon = require('../lib')
+const Fontagon = require('../lib/index.js')
 
 describe('module', () => {
   test('option', () => {
-    fontagon({
+    Fontagon({
       files: [
-        'test/svg/svg-1-1.svg',
-        'test/svg/svg-2-1.svg'
+        'test/**/*.svg'
       ],
-      fontName: 'secui-icons',
-      formatOptions: {
-        svg: {
-          normalize: true,
-          fontHeight: 1000
-        }
+      dist: 'dist/',
+      fontName: 'fontagon-icons',
+      style: 'all',
+      classOptions: {
+        baseClass: 'fontagon-icons',
+        classPrefix: 'ft'
       }
-
+    }).then((opts) => {
+      console.log('done! ')
+    }).catch((err) => {
+      console.log('fail! ', err)
     })
   })
 })
