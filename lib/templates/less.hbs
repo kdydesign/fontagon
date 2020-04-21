@@ -1,9 +1,14 @@
-@font-face {
-  font-family: '{{fontName}}';
-  font-style: normal;
-  font-weight: 400;
-  src: {{{src}}};
+.fontagon-contents(@value) {
+  content: @value;
 }
+
+@font-face {
+  font-family: "{{fontName}}";
+  {{#each src}}
+  src: {{{this}}};
+  {{/each}}
+}
+
 
 .{{baseClass}}, .{{classPrefix}}-icons {
   -webkit-user-select: none;
@@ -22,6 +27,7 @@
   position: relative;
   fill: currentColor;
 }
+
 
 .{{baseClass}} {
   font-family: '{{fontName}}';
@@ -48,5 +54,9 @@
 }
 
 {{#each codepoints}}
-.{{../classPrefix}}-{{@key}}:before { content: "\\{{this}}"; }
+  .{{../classPrefix}}-{{@key}} {
+    &:before {
+      .fontagon-contents("\\{{this}}");
+    }
+  }
 {{/each}}

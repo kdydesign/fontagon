@@ -1,20 +1,18 @@
-/**
- * untitle
- *
- * @since: 2020-04-14
- * @author: kdydesign.kim
- */
-const webfontsGenerator = require('../../lib/index.js')
+const Fontagon = require('../../lib/index.js')
 
-webfontsGenerator({
+Fontagon({
   files: [
-    'test/svg/svg-1.svg',
-    'test/svg/alarm_on-black-18dp.svg'
-  ]
-}, (error) => {
-  if (error) {
-    console.log('Fail!', error)
-  } else {
-    console.log('Done!')
+    'test/**/*.svg'
+  ],
+  dist: 'dist/',
+  fontName: 'fontagon-icons',
+  style: 'all',
+  classOptions: {
+    baseClass: 'fontagon-icons',
+    classPrefix: 'ft'
   }
+}).then((opts) => {
+  console.log('done! ')
+}).catch((err) => {
+  console.log('fail! ', err)
 })

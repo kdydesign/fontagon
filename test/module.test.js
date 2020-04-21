@@ -4,8 +4,8 @@ describe('module', () => {
   test('option', () => {
     fontagon({
       files: [
-        'test/svg/svg-1.svg',
-        'test/svg/svg-2.svg'
+        'test/svg/svg-1-1.svg',
+        'test/svg/svg-2-1.svg'
       ],
       fontName: 'secui-icons',
       formatOptions: {

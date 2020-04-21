@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const { red, green } = require('chalk')
 const { name, version } = require('./package.json')
 
-console.log(`💪 Start ${green(name)} ${red(`v${version}`)}...\n\n`)
+console.log(`💪 Start ${green(name)} ${red(`v${version}`)}...\n`)
 
 module.exports = {
   devServer: {
-    port: 9900
+    port: 8080
   },
   chainWebpack: (config) => {
     config
@@ -18,7 +18,7 @@ module.exports = {
 
     config.resolve.alias
       .set('@', path.join(__dirname, './test/fixture'))
-      .set('vue-data-table', path.join(__dirname, './dist/'))
+      .set('fontagon-icons', path.join(__dirname, './dist/fontagon-icons.css'))
   },
   configureWebpack: (config) => {
     config.plugins = [

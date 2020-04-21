@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import '../../dist/fontagon-icons.css'
+import 'fontagon-icons'
 
 Vue.config.productionTip = false
 

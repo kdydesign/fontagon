@@ -11,9 +11,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "test": "yarn lint && jest",
-    "test:jest": "babel-node test/fixture/index.js",
+    "test:build": "babel-node test/fixture/index.js",
+    "test:ui": "yarn test:build && yarn dev",
     "lint": "eslint --fix lib",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish"
   },
@@ -34,6 +35,8 @@
     }
   ],
   "dependencies": {
+    "consola": "^2.11.3",
+    "glob": "^7.1.6",
     "lodash": "^4.17.15",
     "mkdirp": "^1.0.4",
     "q": "^1.5.1",
@@ -67,7 +70,13 @@
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "standard-version": "^7.1.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }
