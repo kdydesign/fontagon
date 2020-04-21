@@ -1,9 +1,68 @@
 # ☀ Fontagon
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![Dependencies][david-dm-src]][david-dm-href]
+[![Standard JS][standard-js-src]][standard-js-href]
+![License][license-src]
+
 > You can easily create web-icon-font by creating svg as font.
 
+## Intro
+This module easily converts svg to font files and css. 
+It is a new and updated module that refers to [webfonts-generator](https://www.npmjs.com/package/webfonts-generator) and provides a variety of additional functions such as **CSS**, **LESS**, **SASS**, and **STYLUS** conversion.
+
+## Infos
+- [📖 **Release Notes**](./CHANGELOG.md)
+
+## Install
+Install with npm:
+
+```bash
+npm i fontagon
+```
+
+## Usage
+```javascript
+const Fontagon = require('fontagon')
+
+Fontagon({
+  files: [
+    'test/**/*.svg'
+  ],
+  dist: 'dist/',
+  fontName: 'fontagon-icons',
+  style: 'all',
+  classOptions: {
+    baseClass: 'fontagon-icons',
+    classPrefix: 'ft'
+  }
+}).then((opts) => {
+  console.log('done! ' ,opts)
+}).catch((err) => {
+  console.log('fail! ', err)
+})
+```
+## Options
+
+### `files`
 
 ## License
- 
- [MIT License](./LICENSE)
- 
- Copyright (c) [Dev.DY](https://kdydesign.github.io/)
+[MIT License](./LICENSE)
+Copyright (c) [Dev.DY](https://kdydesign.github.io/)
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/fontagon?style=flat-square
+[npm-version-href]: https://npmjs.com/package/fontagon
+[npm-downloads-src]: https://img.shields.io/npm/dt/fontagon?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/fontagon
+[circle-ci-src]: https://img.shields.io/circleci/project/github/kdydesign/fontagon/master.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/kdydesign/fontagon/tree/master
+[codecov-src]: https://img.shields.io/codecov/c/github/kdydesign/fontagon.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/kdydesign/fontagon
+[david-dm-src]: https://david-dm.org/kdydesign/fontagon/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/kdydesign/fontagon
+[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
+[standard-js-href]: https://standardjs.com
+[license-src]: https://img.shields.io/npm/l/fontagon?style=flat-square
