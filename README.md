@@ -15,9 +15,10 @@ It is a new and updated module that refers to [webfonts-generator](https://www.n
 
 
 Features:
-* Supported font formats: WOFF2, WOFF, EOT, TTF and SVG.
-* Supports the product built with css, sass, less, and stylus.
+* Supported font formats: `WOFF2`, `WOFF`, `EOT`, `TTF` and `SVG`.
+* Supports the product built with `css`, `sass`, `less`, and `stylus`.
 * Custom templates are available.
+* Support for `ligature`
 
 ## Infos
 - [📖 **Release Notes**](./CHANGELOG.md)
@@ -30,7 +31,11 @@ npm install fontagon
 ```
 
 ## Usage
+Create a file to build svg.
+
 ```javascript
+// index.js
+
 const Fontagon = require('fontagon')
 
 Fontagon({
@@ -51,6 +56,38 @@ Fontagon({
 })
 ```
 
+Modify package.json's npm script or run a build file generated through the nodejs.
+```json
+{
+  "scripts": {
+    "build:fontagon": "node build/index.js"
+  }
+}
+```
+
+```sh
+$ npm run build:fontagon
+```
+
+Now use the build output. You only need to insert the `style sheet`.
+
+```html
+<link rel="stylesheet" type="text/css" href="dist/fontagon-icons.css">
+```
+```javascript
+import '../dist/fontagon-icons.css'
+```
+
+**Fontagon** generates svg by `class` and supports `ligature`. just put the name of the svg.
+
+```html
+<i class="fontagon-icons ft-icon">SVG FILE NAME</i>
+<i class="fontagon-icons ft-icon ft-SVG FILE NAME"></i>
+```
+
+The above results are the same.
+
+
 ## Options
 
 ### `files`
@@ -60,13 +97,15 @@ List of SVG files.
 * Default: `[]`
 * *required*
 
+<br>
 
 ### `dist`
 Directory for generated font files.
 
 * Type: `String`
-* Default: `'dist/`
+* Default: `'dist/'`
 
+<br>
 
 ### `fontName`
 Specify a font name and the default name for the font file.
@@ -74,6 +113,7 @@ Specify a font name and the default name for the font file.
 * Type: `String`
 * Default: `'fontagon-icons'`
 
+<br>
 
 ### `style`
 stylesheet file generation type.
@@ -82,6 +122,7 @@ stylesheet file generation type.
 * Default: `'all'`
 * options: `'css', 'sass', 'less', 'stylus'`
 
+<br>
 
 ### `styleTemplate`
 Specify a custom style template.
@@ -104,6 +145,7 @@ it is merged with the default option and processed.
 }
 ```
 
+<br>
 
 ### `classOptions`
 Additional options for CSS templates, that extends default options.
@@ -120,6 +162,7 @@ or **'classPrefix'** as a sub class factor of the stylesheet.
   }
 ```
 
+<br>
 
 ### `order`
 Order of `src` values in `font-face` in CSS file.
@@ -127,6 +170,7 @@ Order of `src` values in `font-face` in CSS file.
 * Type: `Array`
 * Default: `['eot', 'woff2', 'woff', 'ttf', 'svg']`
 
+<br>
 
 ### `rename`
 Function that takes path of file and return name of icon.
@@ -134,6 +178,7 @@ Function that takes path of file and return name of icon.
 * Type: `Function`
 * Default: basename of file
 
+<br>
 
 ### `startCodepoint`
 Starting codepoint. Defaults to beginning of unicode private area.
@@ -141,6 +186,7 @@ Starting codepoint. Defaults to beginning of unicode private area.
 * Type: `Number`
 * Default: `0xF101`
 
+<br>
 
 ### `codepoints`
 Specific codepoints for certain icons.
@@ -150,6 +196,7 @@ Icons without codepoints will have codepoints incremented from `startCodepoint` 
 * Type: `Object`
 * Default: `{}`
 
+<br>
 
 ### `formatOptions`
 Specific per format arbitrary options to pass to the generator
@@ -172,6 +219,7 @@ format and matching generator:
 - `woff` - [ttf2woff](https://github.com/fontello/ttf2woff).
 - `eot` - [ttf2eot](https://github.com/fontello/ttf2eot).
 
+<br>
 
 ### `writeFiles`
 It is possible to not create files and get generated fonts in object to write them to files later.
