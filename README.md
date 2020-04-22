@@ -50,6 +50,7 @@ Fontagon({
   console.log('fail! ', err)
 })
 ```
+
 ## Options
 
 ### `files`
@@ -59,11 +60,13 @@ List of SVG files.
 * Default: `[]`
 * *required*
 
+
 ### `dist`
 Directory for generated font files.
 
 * Type: `String`
 * Default: `'dist/`
+
 
 ### `fontName`
 Specify a font name and the default name for the font file.
@@ -71,12 +74,14 @@ Specify a font name and the default name for the font file.
 * Type: `String`
 * Default: `'fontagon-icons'`
 
+
 ### `style`
 stylesheet file generation type.
 
 * Type: `String`
 * Default: `'all'`
 * options: `'css', 'sass', 'less', 'stylus'`
+
 
 ### `styleTemplate`
 Specify a custom style template.
@@ -115,11 +120,13 @@ or **'classPrefix'** as a sub class factor of the stylesheet.
   }
 ```
 
+
 ### `order`
 Order of `src` values in `font-face` in CSS file.
 
 * Type: `Array`
 * Default: `['eot', 'woff2', 'woff', 'ttf', 'svg']`
+
 
 ### `rename`
 Function that takes path of file and return name of icon.
@@ -127,11 +134,13 @@ Function that takes path of file and return name of icon.
 * Type: `Function`
 * Default: basename of file
 
+
 ### `startCodepoint`
 Starting codepoint. Defaults to beginning of unicode private area.
 
 * Type: `Number`
 * Default: `0xF101`
+
 
 ### `codepoints`
 Specific codepoints for certain icons.
@@ -140,6 +149,7 @@ Icons without codepoints will have codepoints incremented from `startCodepoint` 
 
 * Type: `Object`
 * Default: `{}`
+
 
 ### `formatOptions`
 Specific per format arbitrary options to pass to the generator
@@ -161,6 +171,7 @@ format and matching generator:
 - `woff2` - [ttf2woff2](https://github.com/nfroidure/ttf2woff2).
 - `woff` - [ttf2woff](https://github.com/fontello/ttf2woff).
 - `eot` - [ttf2eot](https://github.com/fontello/ttf2eot).
+
 
 ### `writeFiles`
 It is possible to not create files and get generated fonts in object to write them to files later.
