@@ -1,5 +1,5 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['lib/*.js'],
+  collectCoverageFrom: ['lib/fixture/*.js', 'lib/*.js'],
   testEnvironment: 'node'
 }
