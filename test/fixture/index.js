@@ -6,6 +6,9 @@ Fontagon({
   ],
   dist: 'dist/',
   fontName: 'fontagon-icons',
+  styleTemplate: {
+    css: 'test/fixture/custom-templates/custom-template.hbs'
+  },
   style: 'all',
   classOptions: {
     baseClass: 'fontagon-icons',
