@@ -30,6 +30,9 @@
     "icon-font",
     "icon"
   ],
+  "files": [
+    "lib"
+  ],
   "license": "MIT",
   "contributors": [
     {
