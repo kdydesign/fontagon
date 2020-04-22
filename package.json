@@ -8,7 +8,9 @@
     "url": "https://github.com/kdydesign/fontagon/issues",
     "email": "kdydesign@gmail.com"
   },
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "lib/index.js",
   "scripts": {
     "dev": "vue-cli-service serve",
