@@ -1,0 +1,54 @@
+@font-face {
+  font-family: '{{fontName}}';
+  src: {{{src}}};
+}
+
+.custom-css {
+  font-size: '2.5em';
+}
+
+.{{baseClass}}, .{{classPrefix}}-icons {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.{{classPrefix}}-icons {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  fill: currentColor;
+}
+
+.{{baseClass}} {
+  font-family: '{{fontName}}';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+{{#each codepoints}}
+.{{../classPrefix}}-{{@key}}:before { content: "\\{{this}}"; }
+{{/each}}
