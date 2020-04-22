@@ -9,7 +9,7 @@
     "email": "kdydesign@gmail.com"
   },
   "private": true,
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "vue-cli-service serve",
     "test": "yarn lint && jest --silent",
