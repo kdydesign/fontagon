@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const { red, green } = require('chalk')
-const { name, version } = require('./package.json')
+const { name, version } = require('./packages/lib/package.json')
 
 console.log(`💪 Start ${green(name)} ${red(`v${version}`)}...\n`)
 

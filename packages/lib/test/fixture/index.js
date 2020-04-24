@@ -1,4 +1,4 @@
-const Fontagon = require('../../lib/index.js')
+const Fontagon = require('../../lib')
 
 Fontagon({
   files: [

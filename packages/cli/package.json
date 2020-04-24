@@ -1,0 +1,35 @@
+{
+  "name": "fontagon-cli",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/kdydesign/fontagon",
+  "repository": "https://github.com/kdydesign/fontagon",
+  "bugs": {
+    "url": "https://github.com/kdydesign/fontagon/issues",
+    "email": "kdydesign@gmail.com"
+  },
+  "bin": {
+    "fontagon": "bin/fontagon.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fontagon",
+    "cli"
+  ],
+  "contributors": [
+    {
+      "name": "Dev.DY <kdydesign@gmail.com>"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^5.0.0",
+    "fontagon": "^1.0.6",
+    "leven": "^3.1.0"
+  }
+}

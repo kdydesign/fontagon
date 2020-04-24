@@ -11,14 +11,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "lib/index.js",
+  "main": "packages/lib/index.js",
   "scripts": {
     "dev": "vue-cli-service serve",
     "test": "yarn lint && jest --silent",
-    "test:build": "babel-node test/fixture/index.js",
+    "test:build": "babel-node packages/lib/test/fixture/index.js",
     "test:ui": "yarn test:build && yarn dev",
-    "lint": "eslint --fix lib",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
+    "lint": "eslint --fix packages/lib",
+    "release": "yarn packages/lib/test && standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [
     "font",
@@ -31,7 +31,7 @@
     "icon"
   ],
   "files": [
-    "lib"
+    "packages/lib"
   ],
   "license": "MIT",
   "contributors": [
@@ -76,6 +76,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
+    "lerna": "^3.20.2",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "node-sass": "^4.13.1",
