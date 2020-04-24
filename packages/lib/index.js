@@ -14,7 +14,7 @@ const { defaultOpts, classOptions } = require('./build.options')
 const { writeResult, flattenFiles } = require('./utils/files')
 const buildClean = require('./build.clear')
 const { renderFonts } = require('./renderer')
-const { name, version } = require('../package.json')
+const { name, version } = require('./package.json')
 
 const { logger, logColor } = require('./utils/logger')
 
