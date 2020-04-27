@@ -1,6 +1,6 @@
 {
-  "name": "fontagontest-cli",
-  "version": "1.0.3",
+  "name": "fontagon-cli",
+  "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/kdydesign/fontagon",
   "repository": "https://github.com/kdydesign/fontagon",
@@ -14,9 +14,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "fontagon",
     "cli"
@@ -29,7 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^5.0.0",
-    "fontagon": "^1.0.6",
+    "fontagon": "^1.0.7",
     "leven": "^3.1.0"
   }
 }
