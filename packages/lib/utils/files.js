@@ -51,9 +51,9 @@ function writeStyle (options) {
  */
 function writeResult (fonts, options) {
   _.forEach(fonts, (content, type) => {
-    const filepath = path.join(options.dist, `${options.fontName}.${type}`)
+    const filePath = path.join(options.dist, `${options.fontName}.${type}`)
 
-    writeFile(content, filepath)
+    writeFile(content, filePath)
   })
 
   if (options.style) {
