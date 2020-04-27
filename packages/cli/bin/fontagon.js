@@ -2,6 +2,7 @@ const { program } = require('commander')
 const chalk = require('chalk')
 
 const cleanArgs = require('../utils/cleanArgs')
+console.log('21321')
 
 program
   .version(`fontagon-cli ${require('../package').version}`)
