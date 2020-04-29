@@ -1,8 +1,7 @@
 ![Fontagon logo](https://raw.githubusercontent.com/kdydesign/cdn/master/fontagon/logo/svg/fontagon-logo-inline.svg)
 
 # Fontagon Package
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![lerna][lerna-src]][lerna-href]
 [![Circle CI][circle-ci-src]][circle-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![Dependencies][david-dm-src]][david-dm-href]
@@ -51,3 +50,5 @@ Copyright (c) [Dev.DY](https://kdydesign.github.io/)
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
 [standard-js-href]: https://standardjs.com
 [license-src]: https://img.shields.io/npm/l/fontagon?style=flat-square
+[lerna-src]: https://img.shields.io/badge/maintained/with-lerna-cc00ff.svg?style=flat-square
+[lerna-href]: https://lerna.js.org/
