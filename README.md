@@ -30,8 +30,6 @@ Features:
 [Fontagon](https://github.com/kdydesign/fontagon/tree/dev/packages/fontagon):
 Use `Fontagon` to build an icon-font build system.
 
-<br>
-
 [Fontagon-CLI](https://github.com/kdydesign/fontagon/tree/dev/packages/fontagon-cli):
 `Fontagon-CLI` makes it easy to use `Fontagon`.
 
