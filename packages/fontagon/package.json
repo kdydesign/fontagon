@@ -1,6 +1,6 @@
 {
   "name": "fontagon",
-  "version": "1.0.8",
+  "version": "1.0.7",
   "description": "Easy web icon font generator",
   "homepage": "https://github.com/kdydesign/fontagon",
   "repository": "https://github.com/kdydesign/fontagon",
@@ -17,9 +17,7 @@
     "test": "yarn lint && jest --silent",
     "test:build": "babel-node test/fixture/index.js",
     "test:ui": "yarn test:build && yarn dev",
-    "lint": "eslint --fix **/*.js --ignore-path ../../.eslintignore",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "release2": "standard-version"
+    "lint": "eslint --fix **/*.js --ignore-path ../../.eslintignore"
   },
   "keywords": [
     "font",

@@ -1,9 +1,18 @@
 {
   "private": true,
   "workspaces": [
-    "packages/lib",
-    "packages/cli"
+    "packages/fontagon",
+    "packages/fontagon-cli"
   ],
+  "scripts": {
+    "clean": "lerna clean",
+    "bootstrap": "yarn clean && lerna bootstrap",
+    "lint": "eslint --fix packages/**/*.js packages/**/bin/*",
+    "test:fontagon-core": "lerna run --scope fontagon test",
+    "test:fontagon-cli": "",
+    "test": "yarn lint && yarn test:fontagon-core",
+    "release": "yarn test && lerna publish"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
@@ -22,7 +31,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^25.3.0",
-    "lerna": "^3.20.2",
-    "standard-version": "^7.1.0"
+    "lerna": "^3.20.2"
   }
 }

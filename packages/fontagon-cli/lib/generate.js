@@ -8,6 +8,7 @@
  */
 
 const Fontagon = require('fontagon')
+const { logger } = require('../utils/logger')
 
 function generate (svgPath, opts) {
   const options = assignOpts(opts)
@@ -60,7 +61,7 @@ module.exports = (...args) => {
     .catch((err) => {
       // stopSpinner(false) // do not persist
       //
-      console.log(err)
+      logger.log(err)
 
       process.exit(1)
     })

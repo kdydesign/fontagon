@@ -3,7 +3,7 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": [
-    "packages/cli",
-    "packages/lib"
+    "packages/fontagon",
+    "packages/fontagon-cli"
   ]
 }

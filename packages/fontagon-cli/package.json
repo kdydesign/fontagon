@@ -16,7 +16,15 @@
   },
   "keywords": [
     "fontagon",
-    "cli"
+    "cli",
+    "font",
+    "webfont",
+    "svg",
+    "ttf",
+    "woff",
+    "woff2",
+    "icon-font",
+    "icon"
   ],
   "contributors": [
     {

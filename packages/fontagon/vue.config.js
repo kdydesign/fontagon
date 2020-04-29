@@ -1,9 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
-const { red, green } = require('chalk')
+const { logger, logColor } = require('./utils/logger')
 const { name, version } = require('./package.json')
 
-console.log(`💪 Start ${green(name)} ${red(`v${version}`)}...\n`)
+logger.log(`💪 Start ${logColor.green(name)} ${logColor.red(`v${version}`)}...\n`)
 
 module.exports = {
   devServer: {

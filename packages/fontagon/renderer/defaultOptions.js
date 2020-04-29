@@ -1,3 +1,7 @@
+/**
+ * fontagon default option
+ */
+
 const path = require('path')
 
 /**
@@ -6,7 +10,7 @@ const path = require('path')
  * @returns {{css: *, scss: *, html: *}}
  */
 function getTemplates () {
-  const templateDir = path.join(__dirname, '..', 'lib/templates')
+  const templateDir = path.join(__dirname, '..', 'templates')
 
   return {
     css: path.join(templateDir, 'css.hbs'),

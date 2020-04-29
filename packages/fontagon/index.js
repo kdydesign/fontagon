@@ -10,9 +10,9 @@
 const path = require('path')
 const _ = require('lodash')
 
-const { defaultOpts, classOptions } = require('./build.options')
+const { defaultOpts, classOptions } = require('./renderer/defaultOptions')
 const { writeResult, flattenFiles } = require('./utils/files')
-const buildClean = require('./build.clear')
+const buildClean = require('./build/build.clear')
 const { renderFonts } = require('./renderer')
 const { name, version } = require('./package.json')
 
@@ -94,7 +94,9 @@ function Fontagon (_opts) {
 
     return options
   }).catch((err) => {
-    logger.log('💥 Build failed.')
+    logger.log(err)
+    logger.log()
+    logger.log(logColor.red('💥 Build failed.'))
 
     return err
   })

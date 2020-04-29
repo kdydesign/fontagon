@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const { program } = require('commander')
-const chalk = require('chalk')
-const leven = require('leven')
+const { logger, logColor } = require('../utils/logger')
 
 const cleanArgs = require('../utils/cleanArgs')
+const { enhanceErrMsg, suggestCommands } = require('../utils/commanderUtil')
 
 // info
 program
@@ -31,39 +31,29 @@ program
   .arguments('<command>')
   .action((cmd) => {
     program.outputHelp()
-    console.log('  ' + chalk.red(`Unknown command ${chalk.yellow(cmd)}.`))
-    console.log()
+    logger.log('  ' + logColor.red(`Unknown command ${logColor.yellow(cmd)}.`))
+    logger.log()
+
     suggestCommands(cmd)
   })
 
 // --help
 program.on('--help', () => {
-  console.log()
-  console.log(`  Run ${chalk.cyan('fontagon <command> --help')} for detailed usage of given command.`)
-  console.log()
+  logger.log()
+  logger.log(`  Run ${logColor.cyan('fontagon <command> --help')} for detailed usage of given command.`)
+  logger.log()
 })
 
-program.commands.forEach(c => c.on('--help', () => console.log()))
+program.addHelpCommand(false)
+
+program.commands.forEach(c => c.on('--help', () => logger.log()))
+
+enhanceErrMsg('missingArgument', (argName) => {
+  return `Missing required argument ${logColor.yellow(`<${argName}>`)}.`
+})
 
 program.parse(process.argv)
 
 if (!process.argv.slice(2).length) {
   program.outputHelp()
-}
-
-function suggestCommands (unknownCommand) {
-  const availableCommands = program.commands.map(cmd => cmd._name)
-
-  let suggestion
-
-  availableCommands.forEach((cmd) => {
-    const isBestMatch = leven(cmd, unknownCommand) < leven(suggestion || '', unknownCommand)
-    if (leven(cmd, unknownCommand) < 3 && isBestMatch) {
-      suggestion = cmd
-    }
-  })
-
-  if (suggestion) {
-    console.log('  ' + chalk.red(`Did you mean ${chalk.yellow(suggestion)}?`))
-  }
 }

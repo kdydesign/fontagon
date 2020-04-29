@@ -1,4 +1,6 @@
-# ☀ Fontagon
+![Fontagon logo](https://raw.githubusercontent.com/kdydesign/cdn/master/fontagon/logo/svg/fontagon-logo-inline.svg)
+
+# Fontagon
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Circle CI][circle-ci-src]][circle-ci-href]
@@ -19,7 +21,6 @@ Features:
 * Supports the product built with `css`, `sass`, `less`, and `stylus`.
 * Custom templates are available.
 * Support for `ligature`
-* Support for `CLI`
 
 ## Infos
 - [📖 **Release Notes**](./CHANGELOG.md)
