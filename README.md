@@ -26,10 +26,10 @@ Features:
 - [📖 **Release Notes**](./CHANGELOG.md)
 
 ## Documentation
-[Fontagon](https://github.com/kdydesign/fontagon/tree/dev/packages/fontagon):
+[Fontagon](https://github.com/kdydesign/fontagon/tree/master/packages/fontagon):
 Use `Fontagon` to build an icon-font build system.
 
-[Fontagon-CLI](https://github.com/kdydesign/fontagon/tree/dev/packages/fontagon-cli):
+[Fontagon-CLI](https://github.com/kdydesign/fontagon/tree/master/packages/fontagon-cli):
 `Fontagon-CLI` makes it easy to use `Fontagon`.
 
 ## License
