@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "clean": "lerna clean",
-    "bootstrap": "yarn clean && lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
     "lint": "eslint --fix packages/**/*.js packages/**/bin/*",
     "test:fontagon-core": "lerna run --scope fontagon test",
     "test:fontagon-cli": "",
