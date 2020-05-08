@@ -14,6 +14,11 @@ jobs:
       # Install dependencies
       - run:
           name: Install Dependencies
+          command: NODE_ENV=dev yarn
+
+      # Install package dependencies
+      - run:
+          name: Install Package Dependencies
           command: yarn bootstrap
 
       # Keep cache
