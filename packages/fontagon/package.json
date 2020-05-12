@@ -1,6 +1,6 @@
 {
   "name": "fontagon",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Easy web icon font generator",
   "homepage": "https://github.com/kdydesign/fontagon",
   "repository": "https://github.com/kdydesign/fontagon",
@@ -30,7 +30,11 @@
     "icon"
   ],
   "files": [
-    "lib"
+    "build",
+    "renderer",
+    "templates",
+    "utils",
+    "vue.config.js"
   ],
   "license": "MIT",
   "contributors": [
