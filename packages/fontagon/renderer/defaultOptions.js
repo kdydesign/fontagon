@@ -21,36 +21,41 @@ function getTemplates () {
   }
 }
 
-module.exports = {
-  // basic options
-  defaultOpts: {
-    files: [],
-    dist: 'dist/',
-    writeFiles: true,
-    fontName: 'fontagon-icons',
-    style: 'all',
-    styleTemplate: getTemplates(),
-    html: false,
-    htmlTemplate: getTemplates().html,
-    types: ['eot', 'woff', 'woff2'],
-    order: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
-    rename (file) {
-      return path.basename(file, path.extname(file))
-    },
-    formatOptions: {
-      svg: {
-        normalize: true,
-        fontHeight: 1000
-      }
-    },
-    startCodepoint: 0xF101,
-    normalize: true,
-    codepoints: {}
-  },
+class Options {
+  defaultOpts () {
+    return {
+      files: [],
+      dist: 'dist/',
+      writeFiles: true,
+      fontName: 'fontagon-icons',
+      style: 'all',
+      styleTemplate: getTemplates(),
+      html: false,
+      htmlTemplate: getTemplates().html,
+      types: ['eot', 'woff', 'woff2'],
+      order: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
+      rename (file) {
+        return path.basename(file, path.extname(file))
+      },
+      logs: true,
+      formatOptions: {
+        svg: {
+          normalize: true,
+          fontHeight: 1000
+        }
+      },
+      startCodepoint: 0xF101,
+      normalize: true,
+      codepoints: {}
+    }
+  }
 
-  // class options
-  classOptions: {
-    baseClass: 'fontagon-icons',
-    classPrefix: 'ft'
+  classOptions () {
+    return {
+      baseClass: 'fontagon-icons',
+      classPrefix: 'ft'
+    }
   }
 }
+
+module.exports = Options

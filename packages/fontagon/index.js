@@ -10,7 +10,7 @@
 const path = require('path')
 const _ = require('lodash')
 
-const { defaultOpts, classOptions } = require('./renderer/defaultOptions')
+const DefaultOptions = require('./renderer/defaultOptions')
 const { writeResult, flattenFiles } = require('./utils/files')
 const buildClean = require('./build/build.clear')
 const { renderFonts } = require('./renderer')
@@ -27,14 +27,15 @@ logger.log(`❤ Welcome to ${logColor.blue(name)} ${logColor.red(`v${version}`)}
  * @returns {*}
  */
 function initFontagon (_opts) {
-  const options = Object.assign({}, defaultOpts, _opts)
+  const optInc = new DefaultOptions()
+  const options = Object.assign({}, optInc.defaultOpts(), _opts)
 
   // clean build
   buildClean(options.dist)
 
   options.files = flattenFiles(options)
   options.names = _.map(options.files, options.rename)
-  options.styleTemplate = Object.assign(defaultOpts.styleTemplate, options.styleTemplate)
+  options.styleTemplate = Object.assign(optInc.defaultOpts().styleTemplate, options.styleTemplate)
 
   if (options.styleDist === void 0) {
     options.styleDist = path.join(options.dist, `${options.fontName}.${options.style}`)
@@ -44,7 +45,7 @@ function initFontagon (_opts) {
     options.htmlDist = path.join(options.dist, `${options.fontName}.html`)
   }
 
-  options.classOptions = Object.assign({}, classOptions, options.classOptions)
+  options.classOptions = Object.assign({}, optInc.classOptions(), options.classOptions)
 
   return options
 }
