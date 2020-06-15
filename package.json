@@ -11,7 +11,7 @@
     "test:fontagon-core": "lerna run --scope fontagon test",
     "test:fontagon-cli": "",
     "test": "yarn lint && yarn test:fontagon-core",
-    "release": "yarn test && lerna publish"
+    "release": "yarn test && git push && lerna publish from-git"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
