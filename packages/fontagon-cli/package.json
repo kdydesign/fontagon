@@ -1,6 +1,6 @@
 {
   "name": "fontagon-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "homepage": "https://github.com/kdydesign/fontagon",
   "repository": "https://github.com/kdydesign/fontagon",
@@ -34,7 +34,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^5.0.0",
-    "fontagon": "^1.0.9",
+    "fontagon": "^1.0.10",
     "leven": "^3.1.0"
   }
 }
