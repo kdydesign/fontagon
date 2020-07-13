@@ -18,8 +18,6 @@ const { name, version } = require('./package.json')
 
 const { logger, logColor } = require('./utils/logger')
 
-logger.log(`❤ Welcome to ${logColor.blue(name)} ${logColor.red(`v${version}`)}...\n`)
-
 /**
  * initialize
  *
@@ -31,7 +29,7 @@ function initFontagon (_opts) {
   const options = Object.assign({}, optInc.defaultOpts(), _opts)
 
   // clean build
-  buildClean(options.dist)
+  buildClean(options)
 
   options.files = flattenFiles(options)
   options.names = _.map(options.files, options.rename)
@@ -59,6 +57,8 @@ function initFontagon (_opts) {
  */
 function Fontagon (_opts) {
   const options = initFontagon(_opts)
+
+  logger(options.logs).log(`❤ Welcome to ${logColor.blue(name)} ${logColor.red(`v${version}`)}...\n`)
 
   if (options.files.length === 0) {
     return
@@ -91,13 +91,13 @@ function Fontagon (_opts) {
       writeResult(result, options)
     }
 
-    logger.log('\n💘 Build succeeded.')
+    logger(options.logs).log('\n💘 Build succeeded.')
 
     return options
   }).catch((err) => {
-    logger.log(err)
-    logger.log()
-    logger.log(logColor.red('💥 Build failed.'))
+    logger(options.logs).log(err)
+    logger(options.logs).log()
+    logger(options.logs).log(logColor.red('💥 Build failed.'))
 
     return err
   })

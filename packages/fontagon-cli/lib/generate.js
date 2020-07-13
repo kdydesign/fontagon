@@ -61,7 +61,7 @@ module.exports = (...args) => {
     .catch((err) => {
       // stopSpinner(false) // do not persist
       //
-      logger.log(err)
+      logger().log(err)
 
       process.exit(1)
     })

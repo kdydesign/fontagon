@@ -100,7 +100,7 @@ const generators = {
 }
 
 module.exports = function (_opts) {
-  logger.log(`${logColor.bgRed.black('[BUILD: FONT]')} font name is ${logColor.cyan(_opts.fontName)}.`)
+  logger(_opts.logs).log(`${logColor.bgRed.black('[BUILD: FONT]')} font name is ${logColor.cyan(_opts.fontName)}.`)
 
   const genTasks = {}
 
@@ -132,6 +132,6 @@ module.exports = function (_opts) {
   return Q.all(_.values(genTasks)).then((results) => {
     return _.zipObject(_.keys(genTasks), results)
   }).catch((err) => {
-    logger.error(err)
+    logger(_opts.logs).error(err)
   })
 }

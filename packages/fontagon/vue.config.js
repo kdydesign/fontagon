@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const { logger, logColor } = require('./utils/logger')
 const { name, version } = require('./package.json')
 
-logger.log(`💪 Start ${logColor.green(name)} ${logColor.red(`v${version}`)}...\n`)
+logger().log(`💪 Start ${logColor.green(name)} ${logColor.red(`v${version}`)}...\n`)
 
 module.exports = {
   devServer: {

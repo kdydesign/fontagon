@@ -20,6 +20,7 @@ program
   .option('-d, --dist <dist>', 'Directory for generated font files')
   .option('-b, --baseClass <base-class>', 'Stylesheet Default Class Name')
   .option('-p, --classPrefix <class-prefix>', 'Prefix of icon class name')
+  .option('-l, --logs <log>', 'Log output')
   .action((svgPath, cmd) => {
     const options = cleanArgs(cmd)
 
@@ -31,22 +32,22 @@ program
   .arguments('<command>')
   .action((cmd) => {
     program.outputHelp()
-    logger.log('  ' + logColor.red(`Unknown command ${logColor.yellow(cmd)}.`))
-    logger.log()
+    logger().log('  ' + logColor.red(`Unknown command ${logColor.yellow(cmd)}.`))
+    logger().log()
 
     suggestCommands(cmd)
   })
 
 // --help
 program.on('--help', () => {
-  logger.log()
-  logger.log(`  Run ${logColor.cyan('fontagon <command> --help')} for detailed usage of given command.`)
-  logger.log()
+  logger().log()
+  logger().log(`  Run ${logColor.cyan('fontagon <command> --help')} for detailed usage of given command.`)
+  logger().log()
 })
 
 program.addHelpCommand(false)
 
-program.commands.forEach(c => c.on('--help', () => logger.log()))
+program.commands.forEach(c => c.on('--help', () => logger().log()))
 
 enhanceErrMsg('missingArgument', (argName) => {
   return `Missing required argument ${logColor.yellow(`<${argName}>`)}.`

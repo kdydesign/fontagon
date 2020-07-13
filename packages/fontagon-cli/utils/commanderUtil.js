@@ -15,8 +15,8 @@ module.exports.enhanceErrMsg = (methodName, log) => {
     }
     program.outputHelp()
 
-    logger.log('  ' + logColor.red(log(...args)))
-    logger.log()
+    logger().log('  ' + logColor.red(log(...args)))
+    logger().log()
 
     process.exit(1)
   }
@@ -40,6 +40,6 @@ module.exports.suggestCommands = (unknownCommand) => {
   })
 
   if (suggestion) {
-    logger.log('  ' + logColor.red(`Did you mean ${logColor.yellow(suggestion)}?`))
+    logger().log('  ' + logColor.red(`Did you mean ${logColor.yellow(suggestion)}?`))
   }
 }
