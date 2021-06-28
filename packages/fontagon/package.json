@@ -43,6 +43,7 @@
     }
   ],
   "dependencies": {
+    "chalk": "^4.1.1",
     "consola": "^2.11.3",
     "glob": "^7.1.6",
     "handlebars": "^4.7.6",
