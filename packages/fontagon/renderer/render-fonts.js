@@ -100,7 +100,7 @@ const generators = {
 }
 
 module.exports = function (_opts) {
-  logger(_opts.logs).log(`${logColor.bgRed.black('[BUILD: FONT]')} font name is ${logColor.cyan(_opts.fontName)}.`)
+  logger(_opts.logs).log(`${logColor.bgYellowBright.black('[BUILD: FONT]')} font name is ${logColor.cyan(_opts.fontName)}.`)
 
   const genTasks = {}
 

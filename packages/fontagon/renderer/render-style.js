@@ -108,7 +108,7 @@ function makeUrls (options) {
 module.exports = function (options, styleCode) {
   const styleSheet = options.styleTemplate[styleCode]
 
-  logger(options.logs).log(`${logColor.bgBlue.black(`[BUILD: ${styleCode.toUpperCase()}]`)} Path of CSS template: ${logColor.cyan(styleSheet)}`)
+  logger(options.logs).log(`${logColor.bgCyanBright.black(`[BUILD: ${styleCode.toUpperCase()}]`)} Path of CSS template: ${logColor.cyan(styleSheet)}`)
 
   const ctx = makeCtx(options, styleCode, makeUrls(options))
   const source = fs.readFileSync(styleSheet, 'utf8')
