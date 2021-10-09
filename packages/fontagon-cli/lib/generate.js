@@ -56,7 +56,7 @@ function separatedSvg (path) {
 module.exports = (...args) => {
   return generate(...args)
     .then((opts) => {
-      process.exit(1)
+      process.exit(0)
     })
     .catch((err) => {
       // stopSpinner(false) // do not persist
