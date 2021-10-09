@@ -16,6 +16,7 @@ program
   .command('generate <svg-path>')
   .description('Build svg to create style sheets and fonts (multiple path inputs as \',\')')
   .option('-s, --style <style>', 'Type of css or css pre-processor to export')
+  .option('-t, --styleTemplate <path>', 'Path to a hbs template, requires --style')
   .option('-f, --fontName <font-name>', 'Specify a font name and the default name for the font file')
   .option('-d, --dist <dist>', 'Directory for generated font files')
   .option('-b, --baseClass <base-class>', 'Stylesheet Default Class Name')
@@ -23,6 +24,14 @@ program
   .option('-l, --logs <log>', 'Log output')
   .action((svgPath, cmd) => {
     const options = cleanArgs(cmd)
+
+    // If styleTemplate and style were defined, nest the styleTemplate value
+    // into an object using the style value.
+    if (options.styleTemplate) {
+      if (options.style) {
+        options.styleTemplate = { [options.style]: options.styleTemplate }
+      } else delete options.styleTemplate
+    }
 
     require('../lib/generate')(svgPath, options)
   })
