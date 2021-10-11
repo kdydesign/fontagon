@@ -56,6 +56,7 @@ Build svg to create style sheets and fonts (multiple path inputs as ',')
 
 Options:
   -s, --style <style>               Type of css or css pre-processor to export
+  -t, --styleTemplate <path>        Path to a hbs template, requires --style
   -f, --fontName <font-name>        Specify a font name and the default name for the font file
   -d, --dist <dist>                 Directory for generated font files
   -b, --baseClass <base-class>      Stylesheet Default Class Name
